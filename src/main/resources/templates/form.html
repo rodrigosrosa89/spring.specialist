@@ -1,0 +1,6 @@
+<h1>Formulário para clientes</h1>
+<form method="post" th:object="${client}">
+    <input type="text" th:field="*{name}" name="name">
+    <input type="number" th:field="*{age}" name="age">
+    <input type="submit" value="Salvar">
+</form>

@@ -3,10 +3,7 @@ package com.rodrigo.spring.specialist.java.datajpa.controller;
 import com.rodrigo.spring.specialist.java.datajpa.model.Cliente;
 import com.rodrigo.spring.specialist.java.datajpa.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,17 +18,17 @@ public class ClienteController {
         return repository.findAll();
     }
 
-    @GetMapping
-    public Cliente buscarClientePorId(Long id) {
+    @GetMapping("/cliente/{id}")
+    public Cliente buscarClientePorId(@PathVariable(value = "id") Long id) {
         return repository.findById(id).orElse(null);
     }
 
-    @PostMapping
+    @PostMapping("/cliente/criar")
     public Cliente criarCliente(Cliente cliente) {
         return repository.save(cliente);
     }
 
-    @PutMapping
+    @PutMapping("/cliente/atualizar")
     public Cliente atualizarCliente(Cliente cliente) {
         return repository.save(cliente);
     }

@@ -1,4 +1,4 @@
-package com.rodrigo.spring.specialist.java.datajpa.model;
+package com.rodrigo.spring.specialist.java.datajpa.dtos;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

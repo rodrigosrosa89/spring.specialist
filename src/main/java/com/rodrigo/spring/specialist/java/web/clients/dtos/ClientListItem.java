@@ -1,7 +1,7 @@
 package com.rodrigo.spring.specialist.java.web.clients.dtos;
 
-import br.com.treinaweb.twprojects.core.utils.StringUtils;
 import com.rodrigo.spring.specialist.java.datajpa.models.Client;
+import com.rodrigo.spring.specialist.java.datajpa.utils.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package br.com.treinaweb.twprojects.core.utils;
+package com.rodrigo.spring.specialist.java.datajpa.utils;
 
 public class StringUtils {
     

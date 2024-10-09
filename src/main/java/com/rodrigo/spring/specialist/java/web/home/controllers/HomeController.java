@@ -1,4 +1,4 @@
-package br.com.treinaweb.twprojects.web.home.controllers;
+package com.rodrigo.spring.specialist.java.web.home.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

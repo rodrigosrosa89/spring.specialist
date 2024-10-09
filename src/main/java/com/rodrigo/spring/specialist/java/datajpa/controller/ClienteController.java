@@ -1,6 +1,6 @@
 package com.rodrigo.spring.specialist.java.datajpa.controller;
 
-import com.rodrigo.spring.specialist.java.datajpa.model.Cliente;
+import com.rodrigo.spring.specialist.java.datajpa.dtos.Cliente;
 import com.rodrigo.spring.specialist.java.datajpa.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

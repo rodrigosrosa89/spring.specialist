@@ -26,6 +26,7 @@ public class ThymeleafController {
         return "teste";
     }
 
+    // Exemplo com ModelAndView
     @GetMapping("/primeira-tela/model-view")
     public ModelAndView acaoModelAndView() {
         ModelAndView modelAndView = new ModelAndView("teste");
@@ -60,12 +61,15 @@ public class ThymeleafController {
     Com anotação @RequestParam se passar na url "?texto=Rodrigo",
     o sout imprime Rodrigo,
     mesma coisa com idade e habilidades
+
+    O default dessa anotação é ser obrigatório, por isso precisamos colocar:
+    @RequestParam(required = false) no caso de ser opcional
      */
     @GetMapping("primeira-tela/action5/{id}")
     public String action5(
             @PathVariable("id") String id,
             @RequestParam(required = false, name = "texto") String texto,
-            @RequestParam(required = false, name = "idade") int idade,
+            @RequestParam(required = false, name = "idade") Integer idade,
             @RequestParam(required = false) List<String> habilidades) {
         System.out.println(id);
         System.out.println(texto);

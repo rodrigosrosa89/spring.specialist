@@ -18,11 +18,11 @@ import lombok.NoArgsConstructor;
 public class ClientForm {
 
     @NotBlank
-    @Size(max = 400)
+    @Size(max = 400, message = "O campo nome pode conter até 400 caracteres, gentileza verificar!")
     private String name;
 
     @NotBlank
-    @Email
+    @Email(message = "Campo deve ser um e-mail, gentileza verificar!")
     private String email;
 
     @NotBlank

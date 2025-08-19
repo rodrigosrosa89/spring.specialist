@@ -1,6 +1,6 @@
 package com.rodrigo.spring.specialist.java.web.clients.dtos;
 
-import com.rodrigo.spring.specialist.java.datajpa.models.Client;
+import com.rodrigo.spring.specialist.java.core.models.entity.ClientEntity;
 import com.rodrigo.spring.specialist.java.datajpa.utils.StringUtils;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -29,19 +29,19 @@ public class ClientForm {
     @Pattern(regexp = "\\(\\d{2}\\) d{5}-\\d{4}$", message = "telefone deve ter formato com DDD")
     private String phone;
 
-    public Client toClient() {
-        return Client.builder()
+    public ClientEntity toClient() {
+        return ClientEntity.builder()
             .name(name)
             .email(email)
             .phone(StringUtils.cleanPhone(phone))
             .build();
     }
 
-    public static ClientForm of(Client client) {
+    public static ClientForm of(ClientEntity clientEntity) {
         return ClientForm.builder()
-            .name(client.getName())
-            .email(client.getEmail())
-            .phone(StringUtils.formatPhone(client.getPhone()))
+            .name(clientEntity.getName())
+            .email(clientEntity.getEmail())
+            .phone(StringUtils.formatPhone(clientEntity.getPhone()))
             .build();
     }
     

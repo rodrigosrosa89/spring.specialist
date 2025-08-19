@@ -31,8 +31,8 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
                     <label>Cliente</label>
-                    <select th:field="*{client}" class="form-control">
-                      <option th:each="client : ${clients}" th:text="${client.name}" th:value="${client.id}"></option>
+                    <select th:field="*{clientThymeleaf}" class="form-control">
+                      <option th:each="clientThymeleaf : ${clients}" th:text="${clientThymeleaf.name}" th:value="${clientThymeleaf.id}"></option>
                     </select>
                   </div>
                 </div>

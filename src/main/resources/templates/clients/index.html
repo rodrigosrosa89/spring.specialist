@@ -31,21 +31,21 @@
                 </tr>
               </thead>
               <tbody>
-                <tr th:each="client : ${clients}">
-                  <th scope="row" th:text="${client.id}">1</th>
-                  <td th:text="${client.name}">Cleyson Lima</td>
-                  <td th:text="${client.email}">cleyson@mail.com</td>
-                  <td th:text="${client.phone}">(11) 99999-9999</td>
+                <tr th:each="clientThymeleaf : ${clients}">
+                  <th scope="row" th:text="${clientThymeleaf.id}">1</th>
+                  <td th:text="${clientThymeleaf.name}">Cleyson Lima</td>
+                  <td th:text="${clientThymeleaf.email}">cleyson@mail.com</td>
+                  <td th:text="${clientThymeleaf.phone}">(11) 99999-9999</td>
                   <td>
                     <a
-                      th:href="@{/clients/edit/{id} (id=${client.id})}"
+                      th:href="@{/clients/edit/{id} (id=${clientThymeleaf.id})}"
                       class="btn btn-sm btn-primary"
                       role="button"
                     >
                       Editar
                     </a>
                     <a
-                      th:href="@{/clients/delete/{id} (id=${client.id})}"
+                      th:href="@{/clients/delete/{id} (id=${clientThymeleaf.id})}"
                       class="btn btn-sm btn-danger"
                       role="button"
                       onclick="return confirm('Tem certeza que deseja excluir?');"

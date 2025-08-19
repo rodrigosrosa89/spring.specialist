@@ -39,7 +39,7 @@
                   <td th:text="${project.name}">Cleyson Lima</td>
                   <td th:text="${#temporals.format(project.startDate)}">10/10/2020</td>
                   <td th:text="${project.endDate == null ? '-' : #temporals.format(project.endDate)}">10/10/2020</td>
-                  <td th:text="${project.client}">Cleyson Lima</td>
+                  <td th:text="${project.clientThymeleaf}">Cleyson Lima</td>
                   <td th:text="${project.manager}">Cleyson Lima</td>
                   <td th:text="${#numbers.formatCurrency(project.budget)}">R$ 10.000,00</td>
                   <td>

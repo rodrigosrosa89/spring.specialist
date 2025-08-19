@@ -1,4 +1,4 @@
-package com.rodrigo.spring.specialist.java.datajpa.dtos;
+package com.rodrigo.spring.specialist.java.core.models.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,7 +19,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Client {
+public class ClientEntity {
     
     @Id
     @ToString.Include

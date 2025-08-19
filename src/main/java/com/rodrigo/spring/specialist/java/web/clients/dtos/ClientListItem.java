@@ -1,6 +1,6 @@
 package com.rodrigo.spring.specialist.java.web.clients.dtos;
 
-import com.rodrigo.spring.specialist.java.datajpa.models.Client;
+import com.rodrigo.spring.specialist.java.core.models.entity.ClientEntity;
 import com.rodrigo.spring.specialist.java.datajpa.utils.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,12 +25,12 @@ public class ClientListItem {
         return StringUtils.formatPhone(phone);
     }
 
-    public static ClientListItem of(Client client) {
+    public static ClientListItem of(ClientEntity clientEntity) {
         return ClientListItem.builder()
-            .id(client.getId())
-            .name(client.getName())
-            .email(client.getEmail())
-            .phone(client.getPhone())
+            .id(clientEntity.getId())
+            .name(clientEntity.getName())
+            .email(clientEntity.getEmail())
+            .phone(clientEntity.getPhone())
             .build();
     }
     

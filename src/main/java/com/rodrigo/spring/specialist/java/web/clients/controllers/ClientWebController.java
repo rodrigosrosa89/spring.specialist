@@ -1,6 +1,6 @@
 package com.rodrigo.spring.specialist.java.web.clients.controllers;
 
-import com.rodrigo.spring.specialist.java.datajpa.repositories.ClientRepository;
+import com.rodrigo.spring.specialist.java.core.repositories.ClientRepository;
 import com.rodrigo.spring.specialist.java.web.clients.dtos.ClientForm;
 import com.rodrigo.spring.specialist.java.web.clients.dtos.ClientListItem;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,7 @@ import java.util.NoSuchElementException;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/clients")
-public class ClientController {
+public class ClientWebController {
 
     private final ClientRepository clientRepository;
 

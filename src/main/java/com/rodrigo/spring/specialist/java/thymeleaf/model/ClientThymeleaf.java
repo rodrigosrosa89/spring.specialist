@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Client {
+public class ClientThymeleaf {
 
     private String name;
     private String age;

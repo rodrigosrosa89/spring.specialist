@@ -1,10 +1,14 @@
 package com.rodrigo.spring.specialist.java.thymeleaf.controller;
 
-import com.rodrigo.spring.specialist.java.thymeleaf.model.Client;
+import com.rodrigo.spring.specialist.java.thymeleaf.model.ClientThymeleaf;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -36,7 +40,7 @@ public class ThymeleafController {
 
     @GetMapping("primeira-tela/action3")
     public String action3(Model model) {
-        model.addAttribute("client", new Client("Rodrigo", "34"));
+        model.addAttribute("client", new ClientThymeleaf("Rodrigo", "34"));
         return "form";
     }
 
@@ -52,8 +56,8 @@ public class ThymeleafController {
     }
 
     @PostMapping("primeira-tela/action4")
-    public String action4(Client client) {
-        System.out.println("Cliente: ".concat(client.toString()));
+    public String action4(ClientThymeleaf clientThymeleaf) {
+        System.out.println("Cliente: ".concat(clientThymeleaf.toString()));
         return "form";
     }
 

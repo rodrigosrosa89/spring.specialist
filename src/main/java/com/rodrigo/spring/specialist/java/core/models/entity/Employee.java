@@ -1,11 +1,14 @@
 package com.rodrigo.spring.specialist.java.core.models.entity;
 
 import com.rodrigo.spring.specialist.java.core.enums.AdressStateEnum;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -53,7 +56,10 @@ public class Employee {
     @Column(nullable = true)
     private LocalDate resignationDate;
 
-    @OneToOne(optional = false)
-    private AdressStateEnum adress;
+    @OneToOne(optional = false, cascade = CascadeType.ALL, orphanRemoval = true)
+    private Adress adress;
+
+    @ManyToOne(optional = false)
+    private Position position;
 }
 

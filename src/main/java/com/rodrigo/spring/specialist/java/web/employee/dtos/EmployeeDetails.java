@@ -19,4 +19,5 @@ public class EmployeeDetails {
     private LocalDate birthDate;
     private LocalDate hireDate;
     private LocalDate resignationDate;
+    private String adress;
 }

@@ -5,10 +5,15 @@ import com.rodrigo.spring.specialist.java.datajpa.utils.StringUtils;
 import com.rodrigo.spring.specialist.java.web.employee.dtos.EmployeeDetails;
 import com.rodrigo.spring.specialist.java.web.employee.dtos.EmployeeForm;
 import com.rodrigo.spring.specialist.java.web.employee.dtos.EmployeeListItem;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class EmployeeMapperImpl implements EmployeeMapper{
+
+    private final AdressMapper adressMapper;
+
     @Override
     public Employee toEmployee(EmployeeForm employeeForm) {
         return Employee.builder()
@@ -19,6 +24,7 @@ public class EmployeeMapperImpl implements EmployeeMapper{
                 .birthDate(employeeForm.getBirthDate())
                 .hireDate(employeeForm.getHireDate())
                 .resignationDate(employeeForm.getResignationDate())
+                .adress(adressMapper.toAdress(employeeForm.getAdressForm()))
                 .build();
     }
 
@@ -32,6 +38,7 @@ public class EmployeeMapperImpl implements EmployeeMapper{
                 .birthDate(employee.getBirthDate())
                 .hireDate(employee.getHireDate())
                 .resignationDate(employee.getResignationDate())
+                .adressForm(adressMapper.toAdressForm(employee.getAdress()))
                 .build();
     }
 
@@ -55,6 +62,7 @@ public class EmployeeMapperImpl implements EmployeeMapper{
                 .birthDate(employee.getBirthDate())
                 .hireDate(employee.getHireDate())
                 .resignationDate(employee.getResignationDate())
+                .adress(adressMapper.formatAdressString(employee.getAdress()))
                 .build();
     }
 }
